@@ -206,20 +206,22 @@ const IdentifyScreen = () => {
       if (result.error) {
         setIdentifyError(result.error);
       } else if (result.uri) {
-        // Mock AI identification
-        setIsLoading(true);
-        setTimeout(() => {
-          setIdentifyResult({
-            species_name: 'European Robin',
-            common_name: 'Robin',
-            estimated_age: 'adult',
-            gender: 'male',
-            confidence: 'high',
-            identifying_features: 'Distinctive orange-red breast and face, grey-brown back',
-            fun_fact: 'Robins can see ultraviolet light and have magnetic field detection abilities!'
-          });
+        // Replace with real API call
+        (async () => {
+        try {
+          setIsLoading(true);
+          const bird =
+              await window.AI.identifyBird(result.uri);
+          setIdentifyResult(bird);
+        }
+        catch(err){
+           console.error(err);
+          setIdentifyError(err.message);
+        }
+        finally{
           setIsLoading(false);
-        }, 2000);
+        }
+      })();        
       }
     });
   };
