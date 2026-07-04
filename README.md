@@ -5,7 +5,7 @@
 
 A progressive web app for identifying birds by photo or sound, tracking sightings, logging behaviors, and learning about pet bird care.
 
-**Live Site:** https://LaurenForsythe197.github.io/BirdWatcher.github.io/
+**Live Site:** https://LaurenForsythe197.github.io/BirdWatcher/
 
 ---
 
@@ -66,3 +66,109 @@ A progressive web app for identifying birds by photo or sound, tracking sighting
 - **PWA**: Service Worker + Web App Manifest
 
 ### File Structure
+- **index.html**: Main HTML entry point
+-  **styles.css**: Global styling & components
+-  **app.js**: Utils, hooks, theme, database layer
+-  **screens-identify.js**:  Identify screen & modals
+-  **screens-other.js**: Sightings, Behaviors, Pet Care screens
+-  **main-app.js**:  Main app component & tab navigation
+-  **manifest.json**:  PWA manifest
+-  **sw.js** Service worker (offline support)
+-  **README.md**: This file
+
+  
+### Components Breakdown
+
+#### App Core (`app.js`)
+- **Theme System**: Purple color scheme with CSS variables
+- **Database Utilities**: LocalStorage wrapper (get, set, insert, query)
+- **Custom Hooks**: 
+  - `useQuery()` - Fetch data from local DB
+  - `useMutation()` - Insert data into local DB
+  - `useCamera()` - Capture/pick images
+  - `useAudio()` - Record bird sounds
+- **Utility Functions**: UUID generation, date formatting, photo conversion
+- **Icon Component**: Emoji-based icon system
+
+#### Identify Screen (`screens-identify.js`)
+- Three modes: Photo ID, Sound ID, Egg ID
+- Camera & gallery integration
+- Audio recording with visual feedback
+- Mock AI identification (ready for real API integration)
+- Save sighting modal with notes
+- Pro tips section
+
+#### Other Screens (`screens-other.js`)
+- **Sightings**: List and detail view of saved sightings
+- **Behaviors**: Log and view bird behaviors with FAB button
+- **Pet Care**: Care guides and personal pet bird management
+
+#### Main App (`main-app.js`)
+- Bottom tab navigation (4 tabs)
+- Screen routing based on active tab
+- Theme provider wrapper
+
+---
+
+## 🚀 Getting Started
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/LaurenForsythe197/BirdWatcher.github.io.git
+2. **Open locally**
+   ```bash
+   cd BirdWatcher.github.io
+ - Open index.html in a web browser
+ - Or use a local server: python -m http.server 8000
+
+3. **Install as PWA**
+- On mobile: Click share → "Add to Home Screen"
+- On desktop: Click address bar → "Install app"
+
+### Usage
+- **TBC**
+
+---
+
+## 🔧 Development
+- **TBC**
+
+---
+
+## 🔧 Customization
+- **TBC**
+
+---
+
+## 🔧 Data Storage
+- **TBC**
+
+---
+
+## 🔧 Future Enhancements
+- **TBC**
+
+---
+
+## 🔧Browser Support
+- **TBC**
+
+---
+
+## 🔧License
+- **TBC**
+
+
+---
+
+## 🔧Contributing
+- No contributions at minute please as beta version and want 11 year old to learn more
+
+## 🔧Support
+- **None available at moment for internal testing use**
+
+## 🙏Credits
+- Built with React, CSS, and lots of bird facts by an 11-year-old developer! 🐦
+- Happy Birdwatching! 🐦✨
