@@ -185,7 +185,14 @@ const EggIdentifyModal = ({ visible, onClose, theme }) => {
 // ========================================
 
 const IdentifyScreen = () => {
-  const {theme} = window.AppUtils.useTheme();
+  // const {theme} = window.AppUtils.useTheme();
+
+const themeHook = window.AppUtils.useTheme();
+console.log("themeHook =", themeHook);
+const { theme } = themeHook || {};
+console.log("theme =", theme);
+console.log("theme.colors =", theme?.colors);
+  
   const cameraHook = window.AppUtils.useCamera();
   const audioHook = window.AppUtils.useAudio();
   
