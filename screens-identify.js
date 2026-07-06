@@ -444,13 +444,13 @@ const IdentifyScreen = () => {
       onSave: handleSaveSighting,
       result: identifyResult,
       photoUri: cameraHook.photo ? cameraHook.photo.uri : null,
-      theme: theme.colors
+      theme: theme
     }),
 
     React.createElement(EggIdentifyModal, {
       visible: showEggModal,
       onClose: () => { setShowEggModal(false); },
-      theme: theme.colors
+      theme: theme
     })
   );
 };
